@@ -3,10 +3,10 @@ import './core/assets/styles/custom.scss';
 import './app.scss';
 import Routes from './Routes';
 
-const App = () => {
+export default  () => {
   return (
     <Routes />
   )
 }
 
-export default App;
+//export default App;
