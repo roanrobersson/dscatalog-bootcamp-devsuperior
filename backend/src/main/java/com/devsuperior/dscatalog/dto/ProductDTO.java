@@ -5,6 +5,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import com.devsuperior.dscatalog.entities.Category;
 import com.devsuperior.dscatalog.entities.Product;
@@ -40,6 +41,7 @@ public class ProductDTO implements Serializable{
 		this.price = entity.getPrice();
 		this.imgUrl = entity.getImgUrl();
 		this.date = entity.getDate();
+		this.categories = entity.getCategories().stream().map((x) -> new CategoryDTO(x)).collect(Collectors.toList());
 	}
 	
 	public ProductDTO(Product entity, Set<Category> categories) {
